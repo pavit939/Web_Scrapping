@@ -23,6 +23,11 @@ print("Writing data to files...")
 #File is created to store information
 filee = open('/Users/pavitra/pyexe/exeter/output_context2.txt','a')
 
+#To check if given URL is valid
+def valid_url(url):
+    parsed = urlparse(url)
+    return bool(parsed.netloc) and bool(parsed.scheme)
+
 #To find Homepage from given link
 count = 0
 listt = []
@@ -43,11 +48,6 @@ external = set()
 visited = 0
 inn = list(internal)
 ex = list(external)
-
-#To check if given URL is valid
-def valid_url(url):
-    parsed = urlparse(url)
-    return bool(parsed.netloc) and bool(parsed.scheme)
 
 #Returns URL's found in a given webpage
 def website_links(url):
